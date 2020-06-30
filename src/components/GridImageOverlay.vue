@@ -2,7 +2,7 @@
   <v-fade-transition>
     <v-overlay
       absolute
-      color="#662c2c"
+      color="#141414"
       opacity="0.8"
     >
       <h3>
