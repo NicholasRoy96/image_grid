@@ -1,7 +1,7 @@
 <template>
   <v-img
     :src="image"
-    aspect-ratio="1"
+    aspect-ratio="0.88"
     class="grey lighten-2"
   >
     <template v-slot:placeholder>

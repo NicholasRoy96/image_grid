@@ -6,7 +6,7 @@
       class="d-flex child-flex"
       cols="6"
       sm="4"
-      md="3"
+      :md="colValues"
     >
       <v-hover>
         <template v-slot:default="{ hover }">
@@ -31,6 +31,14 @@ export default {
   components: {
     GridImage,
     GridImageOverlay
+  },
+  computed: {
+    colValues() {
+      if (this.$store.state.gridExpanded) {
+        return 3
+      }
+      return 6
+    }
   }
 }
 </script>

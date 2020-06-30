@@ -1,26 +1,54 @@
 <template>
-  <v-app>
-    <Navbar />
-    <v-main>
+  <v-app id="app">
+    <v-main class="pt-md-16">
       <v-container>
-        <Grid />
+        <v-row>
+          <v-col cols="12" :md="overviewColValues">
+            <Overview />
+          </v-col>
+          <v-col cols="12" :md="gridColValues">
+            <Grid />
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Navbar from './components/Navbar'
-import Grid from './components/Grid'
+import Grid from './components/Grid.vue'
+import Overview from './components/Overview.vue'
 
 export default {
   name: 'App',
   components: {
-    Navbar,
-    Grid
+    Grid,
+    Overview
+  },
+  computed: {
+    overviewColValues() {
+      if (this.$store.state.gridExpanded) {
+        return 12
+      }
+      return 5
+    },
+    gridColValues() {
+      if (this.$store.state.gridExpanded) {
+        return 12
+      }
+      return 7
+    }
   },
   data: () => ({
     //
   }),
 };
 </script>
+
+<style scoped>
+#app {
+  color: white;
+  background-color: #080808;
+  font-family: Arial, Helvetica, sans-serif
+}
+</style>>
