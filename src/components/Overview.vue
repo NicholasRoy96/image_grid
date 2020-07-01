@@ -5,7 +5,7 @@
       Image Grid
     </h1>
     <p class="overview-text">
-      Please explore this reponsive image grid. Click an image to be taken to the image page, or hover over the image and click on the user to visit the user profile. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia explicabo voluptatum blanditiis autem aspernatur quo. Illum incidunt, nesciunt earum eum ad magni repellendus iste pariatur, sapiente in sed? Expedita, voluptate.
+      Explore this reponsive image grid. Click an image to be taken to the image page, or hover over the image and click on the user to visit the user profile. You can toggle the layout of the grid between fullscreen and splitscreen, and you can pull in new random images by hitting the new images button.
     </p>
 
     <ActionButtons class="pt-3" />

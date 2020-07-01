@@ -1,8 +1,8 @@
 <template>
   <v-row>
     <v-col
-      v-for="n in 12"
-      :key="n"
+      v-for="(image, i) in imageInfo"
+      :key="i"
       class="d-flex child-flex"
       cols="6"
       sm="4"
@@ -10,10 +10,17 @@
     >
       <v-hover>
         <template v-slot:default="{ hover }">
-          <a href="#">
-            <v-card flat tile class="d-flex">
-              <GridImage :image="`https://picsum.photos/500/300?image=${n}`" />
-              <GridImageOverlay v-if="hover" />
+          <a
+            :href="image.image_link"
+            target="_blank"
+          >
+            <v-card
+              flat
+              tile
+              class="d-flex"
+            >
+              <GridImage :image="image.url" />
+              <GridImageOverlay :imageInfo="image" v-if="hover" />
             </v-card>
           </a>
         </template>
@@ -38,6 +45,10 @@ export default {
         return 3
       }
       return 6
+    },
+    imageInfo() {
+      if (!this.$store.state.images) return []
+      return this.$store.state.images
     }
   }
 }
