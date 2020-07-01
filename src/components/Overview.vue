@@ -1,10 +1,8 @@
 <template>
   <div id="overview" class="pa-4 pa-sm-0">
-
     <h1 class="overview-title">
-      Image Grid
+      Image Grid.
     </h1>
-    
     <h4 class="overview-creator">
       by
       <a
@@ -18,10 +16,8 @@
     <p class="overview-text">
       Explore this responsive image grid. Click an image to be taken to the image page, or hover over the image and click on the user to visit the user profile. Toggle the layout of the grid between fullscreen and splitscreen, or even pull in new random images by hitting the new images button. The Unsplash API only allows 50 request per hour though, so go easy!
     </p>
-
     <ActionButtons class="pt-3" />
     <SocialButtons class="pt-3" />
-
   </div>
 </template>
 

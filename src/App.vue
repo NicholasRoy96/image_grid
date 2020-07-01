@@ -32,23 +32,16 @@ export default {
       return this.$store.state.gridExpanded
     },
     overviewColValues() {
-      if (this.gridExpanded) {
-        return 12
-      }
-      return 5
+      return this.gridExpanded ? 12 : 5
     },
     gridColValues() {
-      if (this.gridExpanded) {
-        return 12
-      }
-      return 6
+      return this.gridExpanded ? 12 : 6
     }
   },
-
   created() {
     this.fetchImages()
   }
-};
+}
 </script>
 
 <style scoped>

@@ -40,10 +40,7 @@ export default {
   },
   computed: {
     colValues() {
-      if (this.$store.state.gridExpanded) {
-        return 3
-      }
-      return 6
+      return this.$store.state.gridExpanded ? 3 : 6
     },
     imageInfo() {
       if (!this.$store.state.images) return []
@@ -57,7 +54,6 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.25s ease-out;
 }
-
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
