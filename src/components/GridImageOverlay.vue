@@ -4,8 +4,10 @@
       absolute
       :color="imageInfo.color"
       opacity="0.8"
+      class="overlay"
+      :class="{'dark-text': !darkColor}"
     >
-      <h3 :class="{'dark-text': !darkColor}">
+      <h3 class="user-title">
         by
         <a
           :href="imageInfo.user_link"
@@ -16,12 +18,12 @@
           {{imageInfo.user_name}}
         </a>
       </h3>
+      <span class="summary">
+        "{{formattedSummary}}"
+      </span>
       <div class="likes-div">
         <v-icon color="red">mdi-heart</v-icon>
-        <span
-          class="likes-text"
-          :class="{'dark-text': !darkColor}"
-        >
+        <span class="likes-text">
         {{imageInfo.likes}}
         </span>
       </div>
@@ -41,6 +43,10 @@ export default {
     }
   },
   computed: {
+    formattedSummary() {
+      if (this.imageInfo.summary.length < 82) return this.imageInfo.summary
+      return this.imageInfo.summary.slice(0, 82).trim() + "..."
+    },
     darkColor() {
       return isDarkColor(this.imageInfo.color)
     }
@@ -49,6 +55,15 @@ export default {
 </script>
 
 <style scoped>
+.overlay {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.user-title {
+  font-size: 1.15em;
+  font-style: italic;
+}
 .user-link {
   color: white;
   text-decoration: none;
@@ -63,12 +78,15 @@ export default {
   padding-top: 10px;
 }
 .likes-text {
-  font-weight: 500;
+  font-weight: 600;
   padding-left: 5px;
   font-size: 0.9em;
-  font-style: italic;
 }
 .dark-text {
   color: #161717 !important;
+}
+.summary {
+  font-size: 0.72em;
+  font-style: italic;
 }
 </style>

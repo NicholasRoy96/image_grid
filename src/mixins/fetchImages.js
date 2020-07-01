@@ -4,7 +4,6 @@
         try {
           const response = await this.$axios.get(`https://api.unsplash.com/photos/?page=${Math.random() * 100}&&per_page=12&&client_id=${process.env.VUE_APP_ACCESS_KEY}`)
           const images = response.data
-          console.log(images)
           const formattedImages = images.map(image => {
             return {
               url: image.urls.regular,
