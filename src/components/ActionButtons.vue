@@ -10,7 +10,7 @@
       Fullscreen grid
     </v-btn>
     <v-btn
-      v-if="fullscreenGrid"
+      v-else
       depressed
       class="text-capitalize action-button d-none d-md-flex"
       @click="toggleGrid"
