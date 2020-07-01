@@ -2,7 +2,7 @@
   <v-img
     :src="image"
     aspect-ratio="0.88"
-    class="grey lighten-2"
+    class="black"
   >
     <template v-slot:placeholder>
       <v-row
@@ -10,7 +10,7 @@
         align="center"
         justify="center"
       >
-        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+        <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
       </v-row>
     </template>
   </v-img>

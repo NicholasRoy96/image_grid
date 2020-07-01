@@ -1,8 +1,8 @@
 <template>
   <v-app id="app">
-    <v-main class="pt-md-16">
+    <v-main class="pt-md-10 pb-md-10">
       <v-container>
-        <v-row>
+        <v-row justify="space-between">
           <v-col cols="12" :md="overviewColValues">
             <Overview />
           </v-col>
@@ -28,17 +28,20 @@ export default {
   },
   mixins: [fetchImages],
   computed: {
+    gridExpanded() {
+      return this.$store.state.gridExpanded
+    },
     overviewColValues() {
-      if (this.$store.state.gridExpanded) {
+      if (this.gridExpanded) {
         return 12
       }
       return 5
     },
     gridColValues() {
-      if (this.$store.state.gridExpanded) {
+      if (this.gridExpanded) {
         return 12
       }
-      return 7
+      return 6
     }
   },
 
@@ -52,6 +55,6 @@ export default {
 #app {
   color: white;
   background-color: #080808;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: 'Poppins', sans-serif;
 }
 </style>>

@@ -6,7 +6,7 @@
       class="text-capitalize action-button d-none d-md-flex"
       @click="toggleGrid"
      >
-      <v-icon left>mdi-grid</v-icon>
+      <v-icon left color="#b2ccd6 !important">mdi-grid</v-icon>
       Fullscreen grid
     </v-btn>
     <v-btn
@@ -15,7 +15,7 @@
       class="text-capitalize action-button d-none d-md-flex"
       @click="toggleGrid"
     >
-      <v-icon left>mdi-grid-large</v-icon>
+      <v-icon left color="#b2ccd6 !important">mdi-grid-large</v-icon>
       Splitscreen grid
     </v-btn>
     <v-btn
@@ -23,7 +23,7 @@
       class="text-capitalize action-button"
       @click="fetchImages"
     >
-      <v-icon left>mdi-refresh</v-icon>
+      <v-icon left color="#b2ccd6 !important">mdi-refresh</v-icon>
       New images
     </v-btn>
   </v-row>
