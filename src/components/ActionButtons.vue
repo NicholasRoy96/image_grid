@@ -1,14 +1,28 @@
 <template>
   <v-row justify="start">
-    <v-btn v-if="fullscreenGrid" class="text-capitalize action-button" @click="toggleGrid" depressed>
+    <v-btn
+      v-if="!fullscreenGrid"
+      depressed
+      class="text-capitalize action-button d-none d-md-flex"
+      @click="toggleGrid"
+     >
       <v-icon left>mdi-grid</v-icon>
       Fullscreen grid
     </v-btn>
-    <v-btn v-if="!fullscreenGrid" class="text-capitalize action-button" @click="toggleGrid" depressed>
+    <v-btn
+      v-if="fullscreenGrid"
+      depressed
+      class="text-capitalize action-button d-none d-md-flex"
+      @click="toggleGrid"
+    >
       <v-icon left>mdi-grid-large</v-icon>
       Splitscreen grid
     </v-btn>
-    <v-btn class="text-capitalize action-button" depressed>
+    <v-btn
+      depressed
+      class="text-capitalize action-button"
+      @click="fetchImages"
+    >
       <v-icon left>mdi-refresh</v-icon>
       New images
     </v-btn>
@@ -16,8 +30,11 @@
 </template>
 
 <script>
+import fetchImages from '../mixins/fetchImages.js'
+
 export default {
   name: 'ActionButtons',
+  mixins: [fetchImages],
   computed: {
     fullscreenGrid() {
       return this.$store.state.gridExpanded

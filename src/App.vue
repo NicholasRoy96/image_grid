@@ -18,6 +18,7 @@
 <script>
 import Grid from './components/Grid.vue'
 import Overview from './components/Overview.vue'
+import fetchImages from './mixins/fetchImages.js'
 
 export default {
   name: 'App',
@@ -25,6 +26,7 @@ export default {
     Grid,
     Overview
   },
+  mixins: [fetchImages],
   computed: {
     overviewColValues() {
       if (this.$store.state.gridExpanded) {
@@ -39,9 +41,10 @@ export default {
       return 7
     }
   },
-  data: () => ({
-    //
-  }),
+
+  created() {
+    this.fetchImages()
+  }
 };
 </script>
 

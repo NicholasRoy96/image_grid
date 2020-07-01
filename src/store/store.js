@@ -1,20 +1,29 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import VuexPersistence from "vuex-persist";
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    gridExpanded: true
+    images: [],
+    gridExpanded: true,
   },
   mutations: {
+    setImages(state, images) {
+      state.images = images;
+    },
     setGridExpanded(state) {
-      state.gridExpanded = !state.gridExpanded
-    }
+      state.gridExpanded = !state.gridExpanded;
+    },
   },
   actions: {
-    toggleGridExpanded({commit}) {
-      commit('setGridExpanded')
-    }
-  }
+    updateImages({ commit }, images) {
+      commit("setImages", images);
+    },
+    toggleGridExpanded({ commit }) {
+      commit("setGridExpanded");
+    },
+  },
+  plugins: [new VuexPersistence().plugin]
 })
